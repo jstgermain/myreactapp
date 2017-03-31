@@ -17,8 +17,3 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import MuiThemeProvider from 'material-ui;
-// import MyReactAppComponent from my

@@ -1,9 +1,5 @@
 // app/assets/javascripts/components/_body.js.jsx
 
-import React from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 var NewItem = React.createClass({
 
     handleClick() {
