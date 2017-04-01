@@ -1,5 +1,7 @@
 // app/assets/javascripts/components/_item.js.jsx
 
+// import DOMPurify from 'dompurify'
+
 var Item = React.createClass({
 
     getInitialState() {
@@ -19,15 +21,23 @@ var Item = React.createClass({
     },
 
     render() {
+
+        var itemName = encodeURIComponent(this.props.item.name),
+            imgSrc = "http://placehold.it/250";
         var name = this.state.editable ? <input type='text' ref='name' defaultValue={this.props.item.name} /> : <h3>{this.props.item.name}</h3>;
-        var description = this.state.editable ? <input type='text' ref='description' defaultValue={this.props.item.description} />: <p>{this.props.item.description}</p>;
+        var description = this.state.editable ? <input type='text' ref='description' defaultValue={this.props.item.description} />: <div>{this.props.item.description}</div>;
 
         return (
             <div>
-                {name}
-                {description}
-                <button onClick={this.props.handleDelete} >Delete</button>
-                <button onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+                <div className="mdl-cell mdl-cell--3-col">
+                    <div className="cartItem">
+                        <img src={imgSrc} />
+                        {name}
+                        {description}
+                    </div>
+                    <button onClick={this.props.handleDelete} >Delete</button>
+                    <button onClick={this.handleEdit}> {this.state.editable ? 'Submit' : 'Edit' } </button>
+                </div>
             </div>
         )
 

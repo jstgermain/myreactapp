@@ -19,9 +19,25 @@ var NewItem = React.createClass({
     render() {
         return (
             <div>
-                <input ref='name' placeholder='Enter the name of the item' />
-                <input ref='description' placeholder='Enter a description' />
-                <button onTouchTap={this.handleClick} onClick={this.handleClick}>Submit</button>
+                <div className="mdl-layout">
+                    <div className="mdl-grid">
+                        <div className="mdl-cell mdl-cell--6-col">
+                            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                                <label className="mdl-textfield__label" htmlFor="name">Item Name</label>
+                                <input className="mdl-textfield__input" type="text" id="name" name="name" ref="name" />
+                            </div>
+                        </div>
+                        <div className="mdl-cell mdl-cell--6-col">
+                            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                                <label className="mdl-textfield__label" htmlFor="description">Description</label>
+                                <input className="mdl-textfield__input" type="text" id="description" name="description" ref="description" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mdl-grid">
+                        <button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" onClick={this.handleClick}>Submit</button>
+                    </div>
+                </div>
             </div>
         )
     }

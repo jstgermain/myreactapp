@@ -53,5 +53,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'responders', '~> 2.3'
+gem 'require'
 gem 'react-rails'
 gem 'babel-source', '~> 5.8', '>= 5.8.35'
+gem 'browserify-rails'
+gem 'public_suffix'
+gem 'material_design_lite-sass'
+gem 'autoprefixer-rails'

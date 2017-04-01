@@ -2,12 +2,18 @@
   "name": "myreactapp",
   "version": "0.0.1",
   "author": "Justin St. Germain <mctjstgermain@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jstgermain/myreactapp.git"
   },
   "dependencies": {
+    "browser-sync": "^2.18.8",
+    "browserify": "^14.1.0",
+    "browserify-incremental": "^3.0.1",
     "html-react-parser": "=0.3.3",
     "material-ui": "^0.17.1",
     "react": "^15.4.2",
@@ -18,5 +24,25 @@
     "redux-form": "=5.3.1",
     "redux-thunk": "=2.1.0",
     "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.3.2",
+    "reactify": "^1.1.1"
+  },
+  "scripts": {
+    "material-ui": "NODE_PATH='./node_modules:../app/assets/javascripts' material-ui",
+    "bundle": "browserify app/assets/javascripts/app.js.jsx -o app/assets/javascripts/bundle.js --transform babelify"
+  },
+  "material-ui": {
+    "testPathDirs": [
+      "../app/assets/javascripts"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify"
+      ]
+    ]
   }
 }

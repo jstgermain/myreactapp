@@ -18,6 +18,7 @@
 
 #Ignore NPM files
 /node_modules/*
+npm-debug.log
 
 # Ignore JetBrains files
 /.idea/*
